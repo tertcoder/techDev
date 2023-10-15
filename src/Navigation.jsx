@@ -28,7 +28,10 @@ function Navigation({ setNavHeight }) {
               </a>
             </li>
             <li className="cursor-pointer">
-              <a className="flex  items-center gap-1 font-semibold" href="#">
+              <a
+                className="flex  items-center gap-1 font-semibold"
+                href="#home"
+              >
                 <span className="flex items-center  justify-center rounded-full bg-secondaryBg px-3 py-1 text-primaryColor">
                   2
                 </span>
@@ -46,13 +49,18 @@ function Navigation({ setNavHeight }) {
           </ul>
           <button
             onClick={() => setIsDark((d) => !d)}
-            className="flex h-[32px] w-[56px] cursor-pointer items-center rounded-full bg-secondaryBg  p-[5px]"
+            className={` flex h-[32px] w-[56px] cursor-pointer items-center justify-between rounded-full   p-[5px] ${
+              isDark ? "bg-secondaryBg " : "bg-slate-300"
+            }
+               duration-300`}
           >
+            <span className="pl-1 font-semibold">L</span>
             <div
-              className={`h-[24px] w-[24px] duration-300 ${
-                isDark ? "translate-x-full" : ""
-              }  rounded-full bg-primaryBg`}
+              className={`absolute h-[24px] w-[24px] rounded-full 
+              ${isDark ? "translate-x-full bg-primaryBg " : "bg-primaryColor"}
+               duration-300`}
             ></div>
+            <span className="pr-1 font-semibold text-secondaryColor">D</span>
           </button>
         </div>
       </div>
