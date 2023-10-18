@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 function Navigation({ setNavHeight }) {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
+
   const navEl = useRef(null);
   useEffect(
     function () {
@@ -10,6 +11,7 @@ function Navigation({ setNavHeight }) {
     },
     [setNavHeight],
   );
+
   return (
     <nav
       ref={navEl}
