@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 function Navigation({ setNavHeight }) {
   const [isDark, setIsDark] = useState(false);
@@ -51,10 +52,11 @@ function Navigation({ setNavHeight }) {
           </ul>
           <button
             onClick={() => setIsDark((d) => !d)}
-            className={` flex h-[32px] w-[56px] cursor-pointer items-center justify-between rounded-full   p-[5px] ${
-              isDark ? "bg-secondaryBg " : "bg-slate-300"
-            }
-               duration-300`}
+            className={twMerge(
+              `flex h-[32px] w-[56px] cursor-pointer items-center justify-between rounded-full   p-[5px] 
+               duration-300`,
+              `${isDark ? "bg-secondaryBg " : "bg-slate-300"}`,
+            )}
           >
             <span className="pl-1 font-semibold">L</span>
             <div
