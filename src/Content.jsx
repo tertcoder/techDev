@@ -1,19 +1,13 @@
 import { twMerge } from "tailwind-merge";
-import { HeroSection } from "./HeroSection";
+import HeroSection from "./sections/HeroSection";
+import Services from "./sections/Services";
 
 function Content({ navHeight }) {
   // console.log(navHeight);
   return (
-    <main
-      className={twMerge(
-        `mx-auto w-2/3  text-primaryColor`,
-        ` pt-[${navHeight}px] `,
-      )}
-    >
+    <main className={twMerge(`mx-auto w-2/3 `, ` pt-[${navHeight}px]  `)}>
       <HeroSection />
-      {/* <main className={`mx-auto w-2/3 pt-[${navHeight}px] text-primaryColor`}>
-        <HeroSection />
-      </main> */}
+      <Services />
     </main>
   );
 }

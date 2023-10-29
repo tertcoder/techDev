@@ -7,3 +7,6 @@
     @apply bg-highlight/40;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
