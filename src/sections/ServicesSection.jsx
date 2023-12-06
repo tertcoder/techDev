@@ -1,13 +1,16 @@
 import { twMerge } from "tailwind-merge";
 import { useDark } from "../hooks/useDark";
-import fig from "../assets/figma.svg";
+import BackendIcon from "../ui/BackendIcon";
+import FigmaIcon from "../ui/FigmaIcon";
+import FrontendIcon from "../ui/FrontendIcon";
+import ContributeIcon from "../ui/ContributeIcon";
 
-function Services() {
+function ServicesSection() {
   const { isDark } = useDark();
   return (
     <section
       id="services"
-      className="flex h-screen flex-col items-center pt-40"
+      className="flex min-h-screen flex-col items-center pt-40"
     >
       <h2 className="mb-8 text-center text-4xl font-semibold">Our Services</h2>
       <div className="grid grid-cols-2 justify-items-center gap-8">
@@ -18,14 +21,15 @@ function Services() {
           )}
         >
           <div className="mb-4 flex items-center font-semibold">
-            <img src={fig} alt="design" className="w-12" />
+            <div className="mr-4 h-12">
+              <FigmaIcon isDark={isDark} />
+            </div>
             <span className="text-xl">UI Design</span>
           </div>
 
           <p className="text-lg">
-            Let us develop transformative user experiences across all platforms
-            and Your brand’s touchpoints. The kind that will make your clients
-            re-visit you.
+            Crafting visually stunning and user-centric interfaces tailored to
+            elevate digital experiences for websites and mobile apps.
           </p>
         </div>
         <div
@@ -35,14 +39,16 @@ function Services() {
           )}
         >
           <div className="mb-4 flex items-center font-semibold">
-            <img src={fig} alt="design" className="w-12" />
+            <div className="mr-4 w-12">
+              <FrontendIcon isDark={isDark} />
+            </div>
             <span className="text-xl">Front-End</span>
           </div>
 
           <p className="text-lg">
-            Let us develop transformative user experiences across all platforms
-            and Your brand’s touchpoints. The kind that will make your clients
-            re-visit you.
+            Bringing designs to life with seamless and responsive front-end
+            development, ensuring a captivating and user-friendly online
+            presence.
           </p>
         </div>
         <div
@@ -52,14 +58,16 @@ function Services() {
           )}
         >
           <div className="mb-4 flex items-center font-semibold">
-            <img src={fig} alt="design" className="w-12" />
+            <div className="mr-4 h-12 w-12">
+              <BackendIcon isDark={isDark} />
+            </div>
             <span className="text-xl">Back-End</span>
           </div>
 
           <p className="text-lg">
-            Let us develop transformative user experiences across all platforms
-            and Your brand’s touchpoints. The kind that will make your clients
-            re-visit you.
+            Empowering your digital infrastructure with robust and efficient
+            back-end solutions, ensuring seamless functionality and data
+            management behind the scenes.
           </p>
         </div>
         <div
@@ -69,14 +77,15 @@ function Services() {
           )}
         >
           <div className="mb-4 flex items-center font-semibold">
-            <img src={fig} alt="design" className="w-12" />
+            <div className="mr-4 h-12 w-12">
+              <ContributeIcon isDark={isDark} />
+            </div>
             <span className="text-xl">Contribute</span>
           </div>
 
           <p className="text-lg">
-            Let us develop transformative user experiences across all platforms
-            and Your brand’s touchpoints. The kind that will make your clients
-            re-visit you.
+            Collaborating and leveraging our expertise to enhance diverse
+            projects, fostering innovation and achieving collective success.
           </p>
         </div>
       </div>
@@ -84,4 +93,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default ServicesSection;

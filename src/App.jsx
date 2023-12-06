@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Content from "./Content";
-import Navigation from "./Navigation";
+import Content from "./ui/Content";
+import Navigation from "./ui/Navigation";
 import { useDark } from "./hooks/useDark";
 import { twMerge } from "tailwind-merge";
+import Footer from "./sections/Footer";
 
 function App() {
   const [navHeight, setNavHeight] = useState(null);
@@ -20,6 +21,7 @@ function App() {
     >
       <Navigation setNavHeight={setNavHeight} />
       <Content navHeight={navHeight} />
+      <Footer />
     </div>
   );
 }

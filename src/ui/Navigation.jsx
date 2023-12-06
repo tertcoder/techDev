@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { useDark } from "./hooks/useDark";
+import { useDark } from "../hooks/useDark";
 
 function Navigation({ setNavHeight }) {
   const { isDark, setIsDark } = useDark();
@@ -60,7 +60,7 @@ function Navigation({ setNavHeight }) {
             <li className="cursor-pointer">
               <a
                 className="flex  items-center gap-1 font-semibold"
-                href="#home"
+                href="#about"
               >
                 <span
                   id="about-us"
@@ -75,7 +75,10 @@ function Navigation({ setNavHeight }) {
               </a>
             </li>
             <li className="cursor-pointer">
-              <a className="flex items-center gap-1 font-semibold" href="#">
+              <a
+                className="flex items-center gap-1 font-semibold"
+                href="#contact"
+              >
                 <span
                   className={twMerge(
                     `flex items-center  justify-center rounded-full  px-3 py-1`,
