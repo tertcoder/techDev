@@ -7,7 +7,7 @@ import ContactSection from "../sections/ContactSection";
 function Content({ navHeight }) {
   // console.log(navHeight);
   return (
-    <main className={twMerge(`mx-auto w-2/3 `, ` pt-[${navHeight}px]  `)}>
+    <main className={twMerge(`mx-auto max-w-6xl `, ` pt-[${navHeight}px]  `)}>
       <HeroSection />
       <Services />
       <AboutSection />

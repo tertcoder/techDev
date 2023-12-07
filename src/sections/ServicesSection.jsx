@@ -10,10 +10,10 @@ function ServicesSection() {
   return (
     <section
       id="services"
-      className="flex min-h-screen flex-col items-center pt-40"
+      className="flex min-h-screen flex-col items-center px-8 pt-40 xl:px-0"
     >
       <h2 className="mb-8 text-center text-4xl font-semibold">Our Services</h2>
-      <div className="grid grid-cols-2 justify-items-center gap-8">
+      <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:gap-8">
         <div
           className={twMerge(
             `rounded-lg border border-highlight/30 p-4`,

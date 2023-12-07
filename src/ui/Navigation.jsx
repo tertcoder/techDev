@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { useDark } from "../hooks/useDark";
+import { HiBars3 } from "react-icons/hi2";
 
 function Navigation({ setNavHeight }) {
   const { isDark, setIsDark } = useDark();
@@ -26,7 +27,7 @@ function Navigation({ setNavHeight }) {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-4">
         <h1 className="text-xl font-bold">TechDevs</h1>
-        <div className="flex items-center  space-x-16">
+        <div className="hidden items-center space-x-16  md:flex">
           <ul className="flex items-center  space-x-4">
             <li className="cursor-pointer">
               <a className="flex items-center gap-1 font-semibold" href="#home">
@@ -108,6 +109,35 @@ function Navigation({ setNavHeight }) {
             <span className="pr-1 font-semibold text-secondaryColor">D</span>
           </button>
         </div>
+        <div>
+          <button
+            className={twMerge(
+              `flex h-8 w-8 items-center justify-center rounded-full`,
+              `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
+            )}
+          >
+            <HiBars3 className="text-xl" />
+          </button>
+        </div>
+      </div>
+      <div
+        className={twMerge(
+          ` absolute flex flex-col gap-4 rounded-md p-4 shadow-sm shadow-secondaryColor`,
+          `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
+        )}
+      >
+        <a className="flex items-center gap-1 font-semibold" href="#home">
+          Home
+        </a>
+        <a className="flex  items-center gap-1 font-semibold" href="#services">
+          Services
+        </a>
+        <a className="flex  items-center gap-1 font-semibold" href="#about">
+          About us
+        </a>
+        <a className="flex items-center gap-1 font-semibold" href="#contact">
+          Contact
+        </a>
       </div>
     </nav>
   );

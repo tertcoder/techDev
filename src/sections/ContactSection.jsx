@@ -7,15 +7,15 @@ function ContactSection() {
   return (
     <section
       id="contact"
-      className="flex min-h-screen flex-col items-center pt-40"
+      className="flex min-h-screen flex-col items-center px-8 pt-40 xl:px-0"
     >
       <h2 className="mb-8 text-center text-4xl font-semibold">Contact Us</h2>
       <p className="text-center text-lg">
         Have a project in mind or just want to say hello? <br></br> We'd love to
         hear from you! Reach out to us through the following channels
       </p>
-      <div className="mt-9 flex w-full ">
-        <div className=" flex-1 space-y-5 pt-8 ">
+      <div className="mt-9 flex w-full flex-col lg:flex-row">
+        <div className="flex-1 space-y-5 self-center pt-8 ">
           <div className="flex items-center gap-4 text-lg">
             <HiMiniAtSymbol className="text-2xl" />
             <span>techdevs023@gmail.com</span>
@@ -25,14 +25,14 @@ function ContactSection() {
           </div>
         </div>
         <div className="flex-1">
-          <form className="space-y-4">
+          <form className="mt-8 space-y-4 lg:mt-0">
             <div className="flex flex-col">
               <label className="mb-2" htmlFor="name">
                 Your Name:
               </label>
               <input
                 className={twMerge(
-                  `rounded-lg border border-transparent px-3 py-2 outline-none  focus:border-highlight/20 focus:shadow-sm focus:shadow-highlight/10`,
+                  `rounded-lg border border-highlight/10 px-3  py-2 outline-none  duration-150 focus:border-highlight/20 focus:shadow-sm focus:shadow-highlight/10`,
                   `${isDark ? "bg-secondaryBg/50" : " bg-slate-50 "}`,
                 )}
                 type="text"
@@ -47,7 +47,7 @@ function ContactSection() {
               </label>
               <input
                 className={twMerge(
-                  `rounded-lg border border-transparent px-3 py-2 outline-none  focus:border-highlight/20 focus:shadow-sm focus:shadow-highlight/10`,
+                  `rounded-lg border border-highlight/10 px-3  py-2 outline-none  duration-150 focus:border-highlight/20 focus:shadow-sm focus:shadow-highlight/10`,
                   `${isDark ? "bg-secondaryBg/50" : " bg-slate-50 "}`,
                 )}
                 type="email"
@@ -64,7 +64,7 @@ function ContactSection() {
                 id="message"
                 name="message"
                 className={twMerge(
-                  `min-h-[150px] w-full resize-none rounded-lg border border-transparent px-3 py-2 outline-none focus:border-highlight/20 focus:shadow-sm focus:shadow-highlight/10`,
+                  `min-h-[150px] w-full resize-none rounded-lg border border-highlight/10 px-3  py-2 outline-none duration-150 focus:border-highlight/20 focus:shadow-sm focus:shadow-highlight/10`,
                   `${isDark ? "bg-secondaryBg/50" : " bg-slate-50 "}`,
                 )}
                 placeholder="Enter your message..."
