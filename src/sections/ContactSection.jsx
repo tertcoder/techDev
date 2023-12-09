@@ -1,6 +1,7 @@
 import { HiMiniAtSymbol, HiMiniPhone } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 import { useDark } from "../hooks/useDark";
+import emailjs from "@emailjs/browser";
 
 function ContactSection() {
   const { isDark } = useDark();

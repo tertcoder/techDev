@@ -122,7 +122,7 @@ function Navigation({ setNavHeight }) {
       </div>
       <div
         className={twMerge(
-          ` absolute flex flex-col gap-4 rounded-md p-4 shadow-sm shadow-secondaryColor`,
+          ` absolute hidden flex-col gap-4 rounded-md p-4 shadow-sm shadow-secondaryColor`,
           `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
         )}
       >
