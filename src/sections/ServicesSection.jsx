@@ -16,7 +16,7 @@ function ServicesSection() {
       <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:gap-8">
         <div
           className={twMerge(
-            `rounded-lg border border-highlight/30 p-4`,
+            `rounded-lg border border-highlight/10 p-4 shadow-sm shadow-highlight/10`,
             `${isDark ? "bg-secondaryBg/50" : "bg-slate-100"}`,
           )}
         >
@@ -34,7 +34,7 @@ function ServicesSection() {
         </div>
         <div
           className={twMerge(
-            `rounded-lg  border border-highlight/30 p-4`,
+            `rounded-lg  border border-highlight/10 p-4 shadow-sm shadow-highlight/10`,
             `${isDark ? "bg-secondaryBg/50" : "bg-slate-100"}`,
           )}
         >
@@ -53,7 +53,7 @@ function ServicesSection() {
         </div>
         <div
           className={twMerge(
-            `rounded-lg  border border-highlight/30 p-4 `,
+            `rounded-lg  border border-highlight/10 p-4 shadow-sm shadow-highlight/10 `,
             `${isDark ? "bg-secondaryBg/50" : "bg-slate-100"}`,
           )}
         >
@@ -72,7 +72,7 @@ function ServicesSection() {
         </div>
         <div
           className={twMerge(
-            `rounded-lg  border border-highlight/30 p-4 `,
+            `rounded-lg  border border-highlight/10 p-4 shadow-sm shadow-highlight/10 `,
             `${isDark ? "bg-secondaryBg/50" : "bg-slate-100"}`,
           )}
         >

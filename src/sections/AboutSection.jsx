@@ -10,7 +10,7 @@ function AboutSection() {
     >
       <h2 className="mb-8 text-center text-4xl font-semibold">Meet the Team</h2>
       <div className="mt-6 grid min-h-[50vh] grid-cols-1 items-center lg:mt-0 lg:grid-cols-2">
-        <div className="relative mb-6 flex h-full flex-wrap justify-center space-x-8 lg:mb-0 lg:justify-start lg:space-x-0">
+        <div className="relative mb-6 flex h-full flex-wrap justify-center space-x-4 sm:space-x-8 lg:mb-0 lg:justify-start lg:space-x-0">
           <TeamMember
             imgSrc={toussaint}
             className="relative lg:absolute"

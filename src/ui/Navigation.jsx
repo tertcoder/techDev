@@ -1,10 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useDark } from "../hooks/useDark";
-import { HiBars3 } from "react-icons/hi2";
+import { HiBars3, HiXMark } from "react-icons/hi2";
+import DarkToggle from "./DarkToggle";
 
 function Navigation({ setNavHeight }) {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const { isDark, setIsDark } = useDark();
+
   const navEl = useRef(null);
   useEffect(
     function () {
@@ -33,7 +36,7 @@ function Navigation({ setNavHeight }) {
               <a className="flex items-center gap-1 font-semibold" href="#home">
                 <span
                   className={twMerge(
-                    `flex items-center  justify-center rounded-full  px-3 py-1`,
+                    `flex items-center justify-center rounded-full border border-highlight/10  px-3 py-1  shadow-sm shadow-highlight/5`,
                     `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
                   )}
                 >
@@ -49,7 +52,7 @@ function Navigation({ setNavHeight }) {
               >
                 <span
                   className={twMerge(
-                    `flex items-center  justify-center rounded-full  px-3 py-1`,
+                    `flex items-center justify-center rounded-full border border-highlight/10  px-3 py-1  shadow-sm shadow-highlight/5`,
                     `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
                   )}
                 >
@@ -66,7 +69,7 @@ function Navigation({ setNavHeight }) {
                 <span
                   id="about-us"
                   className={twMerge(
-                    `flex items-center  justify-center rounded-full  px-3 py-1`,
+                    `flex items-center justify-center  rounded-full border border-highlight/10  px-3 py-1  shadow-sm shadow-highlight/5`,
                     `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
                   )}
                 >
@@ -82,7 +85,7 @@ function Navigation({ setNavHeight }) {
               >
                 <span
                   className={twMerge(
-                    `flex items-center  justify-center rounded-full  px-3 py-1`,
+                    `flex items-center justify-center rounded-full border border-highlight/10  px-3 py-1  shadow-sm shadow-highlight/5`,
                     `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
                   )}
                 >
@@ -92,53 +95,57 @@ function Navigation({ setNavHeight }) {
               </a>
             </li>
           </ul>
-          <button
+          <DarkToggle
+            className=" border border-highlight/10  shadow-sm shadow-highlight/5"
             onClick={() => setIsDark((d) => !d)}
-            className={twMerge(
-              `flex h-[32px] w-[56px] cursor-pointer items-center justify-between rounded-full   p-[5px] 
-               duration-300`,
-              `${isDark ? "bg-secondaryBg " : "bg-slate-100"}`,
-            )}
-          >
-            <span className="pl-1 font-semibold">L</span>
-            <div
-              className={`absolute h-[24px] w-[24px] rounded-full 
-              ${isDark ? "translate-x-full bg-primaryBg " : "bg-primaryColor"}
-               duration-300`}
-            ></div>
-            <span className="pr-1 font-semibold text-secondaryColor">D</span>
-          </button>
+            isDark={isDark}
+          />
         </div>
-        <div>
+        <div className="block md:hidden">
           <button
             className={twMerge(
               `flex h-8 w-8 items-center justify-center rounded-full`,
               `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
             )}
+            onClick={() => setMenuIsOpen((current) => !current)}
           >
-            <HiBars3 className="text-xl" />
+            {menuIsOpen ? (
+              <HiXMark className="text-xl" />
+            ) : (
+              <HiBars3 className="text-xl" />
+            )}
           </button>
         </div>
       </div>
-      <div
-        className={twMerge(
-          ` absolute hidden flex-col gap-4 rounded-md p-4 shadow-sm shadow-secondaryColor`,
-          `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
-        )}
-      >
-        <a className="flex items-center gap-1 font-semibold" href="#home">
-          Home
-        </a>
-        <a className="flex  items-center gap-1 font-semibold" href="#services">
-          Services
-        </a>
-        <a className="flex  items-center gap-1 font-semibold" href="#about">
-          About us
-        </a>
-        <a className="flex items-center gap-1 font-semibold" href="#contact">
-          Contact
-        </a>
-      </div>
+      {menuIsOpen && (
+        <div
+          className={twMerge(
+            ` absolute right-4 top-14 flex w-32 flex-col gap-4 rounded-md p-4 shadow-sm shadow-secondaryColor/10 md:hidden`,
+            `${isDark ? "bg-secondaryBg" : "bg-slate-100"}`,
+          )}
+        >
+          <a className="flex items-center gap-1 font-semibold" href="#home">
+            Home
+          </a>
+          <a
+            className="flex  items-center gap-1 font-semibold"
+            href="#services"
+          >
+            Services
+          </a>
+          <a className="flex  items-center gap-1 font-semibold" href="#about">
+            About us
+          </a>
+          <a className="flex items-center gap-1 font-semibold" href="#contact">
+            Contact
+          </a>
+          <DarkToggle
+            className="border border-highlight/10 shadow-sm shadow-highlight/5"
+            onClick={() => setIsDark((d) => !d)}
+            isDark={isDark}
+          />
+        </div>
+      )}
     </nav>
   );
 }

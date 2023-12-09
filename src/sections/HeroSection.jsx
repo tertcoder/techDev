@@ -2,9 +2,9 @@ function HeroSection() {
   return (
     <section
       id="home"
-      className="px- 8 flex h-screen w-full flex-col items-center  justify-center"
+      className="flex h-screen w-full flex-col items-center justify-center "
     >
-      <h1 className="flex -translate-y-8 flex-col items-center justify-center gap-4 text-6xl font-bold tracking-wider">
+      <h1 className="flex -translate-y-8 flex-col items-center justify-center gap-4 text-4xl font-bold tracking-wider sm:text-6xl">
         <span>
           You{" "}
           <span className="inline-block">
