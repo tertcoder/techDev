@@ -46,7 +46,7 @@ function ContactSection() {
         (result) => {
           if (result.status === 200) {
             setIsLoading(false);
-            toast("sent successfully", {
+            toast.success("Sent successfully", {
               duration: 2000,
               position: "top-center",
               className: `${
@@ -59,7 +59,7 @@ function ContactSection() {
         },
         () => {
           setIsLoading(false);
-          toast("Oops something went wrong", {
+          toast.error("Oops something went wrong", {
             duration: 2000,
             position: "top-center",
             className: `${
