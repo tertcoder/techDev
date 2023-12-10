@@ -49,11 +49,13 @@ function ContactSection() {
             toast.success("Sent successfully", {
               duration: 2000,
               position: "top-center",
-              className: `${
-                isDark
-                  ? "bg-secondaryBg text-primaryColor/90"
-                  : "bg-slate-50 text-primaryBg/80"
-              }`,
+              className: twMerge(
+                ` ${
+                  isDark
+                    ? "bg-secondaryBg text-primaryColor/90"
+                    : "bg-slate-50 text-primaryBg/80"
+                }`,
+              ),
             });
           }
         },
@@ -62,11 +64,13 @@ function ContactSection() {
           toast.error("Oops something went wrong", {
             duration: 2000,
             position: "top-center",
-            className: `${
-              isDark
-                ? "bg-secondaryBg text-primaryColor/90"
-                : "bg-slate-50 text-primaryBg/80"
-            }`,
+            className: twMerge(
+              `${
+                isDark
+                  ? "bg-secondaryBg text-primaryColor/90"
+                  : "bg-slate-50 text-primaryBg/80"
+              }`,
+            ),
           });
         },
       );
